@@ -30,7 +30,8 @@ function App() {
             <p>Welcome, {username}!</p>
           </div>
         ) : (
-            <form>
+            <form onSubmit={handleSubmit}>
+              {error && <p className="error">{ error}</p>}
               <div>
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}
